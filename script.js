@@ -5,13 +5,12 @@ for (let i = 0; i < SQUARES; i++) {
   const square = document.createElement("div");
   square.classList.add("square");
 
-  square.addEventListener("mouseenter", () => {
-    const color = getRandomColor();
-    square.style.backgroundColor = color;
+  square.addEventListener("mouseover", () => {
+    square.style.backgroundColor = getRandomColor();
+  });
 
-    setTimeout(() => {
-      square.style.backgroundColor = "#1d1d1d";
-    }, 1000);
+  square.addEventListener("mouseout", () => {
+    square.style.backgroundColor = "rgb(29, 29, 29)";
   });
 
   container.appendChild(square);
